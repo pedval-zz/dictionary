@@ -1,6 +1,5 @@
 package com.pedrovalencia.dictionary.services;
 
-import java.io.IOException;
 import java.util.List;
 
 /**

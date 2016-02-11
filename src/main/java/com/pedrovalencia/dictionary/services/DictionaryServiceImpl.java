@@ -9,7 +9,6 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,7 +29,7 @@ public class DictionaryServiceImpl implements DictionaryService {
 
             results = reader
                     .lines()
-                    .filter(line -> phrase.contains(line))
+                    .filter(phrase::contains)
                     .collect(Collectors.toList());
 
 
