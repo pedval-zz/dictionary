@@ -32,16 +32,13 @@ public class DictionaryApplicationTests {
 
 	private MockMvc mvc;
 
-	@InjectMocks
-	private DictionaryApplication controller;
-
-	@Mock
+    @Mock
 	private DictionaryService dictionaryService;
 
 	@Before
 	public void setUp() throws Exception {
 		dictionaryService = Mockito.mock(DictionaryService.class);
-		controller = new DictionaryApplication();
+        DictionaryApplication controller = new DictionaryApplication();
 		controller.setDictionaryService(dictionaryService);
 		mvc = MockMvcBuilders.standaloneSetup(controller).build();
 	}

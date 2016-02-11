@@ -3,7 +3,8 @@ package com.pedrovalencia.dictionary.services;
 import java.util.List;
 
 /**
- * Created by pedrovalencia on 11/02/2016.
+ * Created by pedrovalencia
+ * on 11/02/2016.
  */
 public interface DictionaryService {
 
