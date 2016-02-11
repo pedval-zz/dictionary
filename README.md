@@ -5,6 +5,7 @@
 ##Technogy Stack
 - Java 8
 - Spring Boot
+- Gradle
 - JUnit and Mockito (for testing)
 
 
