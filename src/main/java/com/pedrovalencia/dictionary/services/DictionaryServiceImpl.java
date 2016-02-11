@@ -1,5 +1,6 @@
 package com.pedrovalencia.dictionary.services;
 
+import com.pedrovalencia.dictionary.exceptions.DictionaryServiceException;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
  */
 @Service
 public class DictionaryServiceImpl implements DictionaryService {
+
     @Override
     public List<String> findInDictionary(String phrase)  {
         List<String> results;
@@ -33,8 +35,7 @@ public class DictionaryServiceImpl implements DictionaryService {
 
 
         } catch (IOException| URISyntaxException ex) {
-            //TODO to log exception
-            return new ArrayList<>();
+            throw new DictionaryServiceException("Exception while reading from file: ",ex.getCause());
         }
 
         return results;
