@@ -3,13 +3,13 @@ package com.pedrovalencia.dictionary.services;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.mock.web.MockServletContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -30,6 +30,14 @@ public class DictionaryServiceImplTest {
     }
 
     @Test
+    public void testWithEmptyQuery() throws Exception {
+        List<String> phrasesFound = dictionaryService.findInDictionary("");
+
+        Assert.assertNotNull(phrasesFound);
+        Assert.assertEquals(phrasesFound.size(),0);
+    }
+
+    @Test
     public void testWithNoResult() throws Exception {
         List<String> phrasesFound = dictionaryService.findInDictionary("Example");
 
@@ -44,6 +52,9 @@ public class DictionaryServiceImplTest {
 
         Assert.assertNotNull(phrasesFound);
         Assert.assertEquals(phrasesFound.size(),2);
+        Assert.assertTrue(phrasesFound.contains("sore throat"));
+        Assert.assertTrue(phrasesFound.contains("headache"));
+
 
     }
 
