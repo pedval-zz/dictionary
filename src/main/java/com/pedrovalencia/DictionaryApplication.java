@@ -31,7 +31,7 @@ public class DictionaryApplication {
 
 		List<String> phrases = dictionaryService.findInDictionary(query);
 		if(phrases.isEmpty()) {
-			throw new NotFoundException("No results in the query");
+			throw new NotFoundException("No results for the query: "+query);
 		}
 		return phrases;
 	}
