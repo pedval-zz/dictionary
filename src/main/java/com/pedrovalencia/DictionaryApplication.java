@@ -33,7 +33,7 @@ public class DictionaryApplication {
 		if(phrases.isEmpty()) {
 			throw new NotFoundException("No results in the query");
 		}
-		return dictionaryService.findInDictionary(query);
+		return phrases;
 	}
 
 	@Autowired
